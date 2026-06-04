@@ -56,7 +56,6 @@ jobs:
       ZOTERO_API_KEY: ${{ secrets.ZOTERO_API_KEY }}
       ZOTERO_LIBRARY_TYPE: ${{ secrets.ZOTERO_LIBRARY_TYPE }}
       ZOTERO_LIBRARY_ID: ${{ secrets.ZOTERO_LIBRARY_ID }}
-      ZOTERO_COLLECTION_KEY: ${{ secrets.ZOTERO_COLLECTION_KEY }}
       UNPAYWALL_EMAIL: ${{ secrets.UNPAYWALL_EMAIL }}
       MODAL_GPU: ${{ inputs.gpu }}
     steps:
