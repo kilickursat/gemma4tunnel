@@ -1,0 +1,23 @@
+name: Sync HF Space Demo
+
+on:
+  workflow_dispatch:
+    inputs:
+      space_repo:
+        description: "HF Space repo id, e.g. TUSTResearcher/gemma4tunnel-demo or TUSTResearcher/gemma4tunnel"
+        required: true
+        default: "TUSTResearcher/gemma4tunnel-demo"
+
+jobs:
+  sync-space:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: huggingface/hub-sync@v0.1.0
+        with:
+          github_repo_id: ${{ github.repository }}
+          huggingface_repo_id: ${{ inputs.space_repo }}
+          repo_type: space
+          space_sdk: gradio
+          subdirectory: space
+          hf_token: ${{ secrets.HF_TOKEN }}
