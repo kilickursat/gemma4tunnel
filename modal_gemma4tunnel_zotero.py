@@ -30,7 +30,7 @@ OUT_DIR = VOLUME_PATH / "hf_upload"
 
 # The GPU is read at Modal app construction time by the GitHub Actions runner.
 # Set the MODAL_GPU env var from the workflow input. Default: H100.
-MODAL_GPU = os.environ.get("MODAL_GPU", "H100")
+MODAL_GPU = os.environ.get("MODAL_GPU", "L40S")
 
 base_image = (
     modal.Image.debian_slim(python_version="3.11")
